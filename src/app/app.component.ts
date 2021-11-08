@@ -9,11 +9,11 @@ import { DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 })
 export class AppComponent implements OnInit {
   
-  imgOfTheDay: string | SafeResourceUrl |undefined
-  imgTitle: string | undefined
-  imgUrl: string | undefined
-  imgDate: string | undefined
-  imgExplanation: string | undefined
+  public imgOfTheDay: string | SafeResourceUrl |undefined
+  public imgTitle: string | undefined
+  public imgUrl: string | undefined
+  public imgDate: string | undefined
+  public imgExplanation: string | undefined
 
   constructor(private nasaService: NasaService, private sanitizer: DomSanitizer){
   }
