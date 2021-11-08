@@ -1,18 +1,19 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Cocktail } from './shared/models/Cocktail.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CocktailService {
 
-  listCocktails = [
-    {name : "Martini", price : 5, description: "blablablablablabla blablablablablabla blablablablablabla", img : "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/15-09-26-RalfR-WLC-0095.jpg/280px-15-09-26-RalfR-WLC-0095.jpg"},
-    {name : "Mojito fraises", price : 7, description: "blablablablablabla blablablablablabla blablablablablabla", img : "https://www.atelierdeschefs.com/media/recette-e24638-virgin-mojito-fraises-et-framboises.jpg"},  ];
-
-  constructor() { 
+  constructor(private http: HttpClient) { 
   }
 
-  public getCocktails(){
-    return this.listCocktails;
+  //Grâce à cette fonction, on vient récupérer les données de cocktails.json (un tableau de cocktails en l'occurence)
+  public getCocktails():Observable<Cocktail[]>{
+    return this.http.get<Cocktail[]>('assets/cocktails.json')
   }
 }
