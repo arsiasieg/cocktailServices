@@ -1,1 +1,12 @@
-<app-cocktail-list></app-cocktail-list>
+<div class="card" style="width: 30rem;">
+        <img src="{{imgOfTheDay}}" alt="space imgage">
+        <!-- <iframe width="560" height="315" [src]="imgOfTheDay" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+    <div class="card-body">
+        <h1 class="card-title">{{imgTitle}}</h1>
+        <p>Date : {{imgDate | date : 'd MMMM y'}}</p>
+        <p class="card-text">{{imgExplanation}}</p>
+        <a href="{{imgUrl}}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Voir en grand</a>
+    </div>
+</div>
+
+
